@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Decodificador de Texto</title>
+</head>
+
+<body>
+    <!-- Controle de Cores -->
+    <div class="color-control-panel">
+        <!-- Atualização do caminho da imagem -->
+        <img src="./img/Frame 6.png" class="container__logo" />
+        <h3>Personalizar Cores</h3>
+        <label for="bg-color">Cor de Fundo:</label>
+        <input type="color" id="bg-color" name="bg-color" value="#000000">
+        <label for="text-color">Cor do Texto:</label>
+        <input type="color" id="text-color" name="text-color" value="#00FF00">
+        <label for="button-color">Cor do Botão:</label>
+        <input type="color" id="button-color" name="button-color" value="#00FF00">
+    </div>
+
+    <div class="container">
+        <div class="sub__bloco__1" style="text-align: center;">
+            <pre id="ascii-logo" style="color: #00FF00; font-family: monospace;">
+            </pre>
+        </div>
+        <div class="sub__bloco__2">
+            <div class="container__text__digitado">
+                <textarea id="texto_digitado" class="input__texto" placeholder="Digite seu texto"></textarea>
+            </div>
+            <div class="container__button">
+                <button class="button button__criptografar" onclick="criptografar()">Criptografar</button>
+                <button class="button button__descriptografar" onclick="descriptografar()">Descriptografar</button>
+            </div>
+        </div>
+        <div class="sub__bloco__3">
+            <div id="div_sem_mensagem" class="container__resposta">
+                <pre id="ascii-no-message" style="color: #00FF00; font-family: monospace;">
+                    _.--"""-,
+                    .'         `\
+                   /   _         \
+      .-""-.       |  (O\.--.-.-/O)          .-""-.
+     / O O  \      .\|(_._.__._.__)         /  O O \
+     |O .-.  \    (   )   0 _ 0   \        /  .-. O|
+     \ (   )  '.   `-|     (_)     |     .'  (   ) /
+      '.`-'     '-./`|             |`\.-'     '-'.'
+        \         |  \   \     /   /  |         /
+         \        \   '.  '._.'  .'   /        /
+          \        '.   `'-----'`   .'        /
+           \   .'    '-._        .-'\   '.   /
+            |/`          `'''''')    )    `\|
+            /                  (    (      ,\
+           ;                    \    '-..-'/ ;
+           |                     '.       /  |
+           |                       `'---'`   |
+           ;                                 ;
+            \                               /
+             `.                           .'
+               '-._                   _.-'
+                __/`"  '  - - -  ' "`` \__
+              /`            /^\           `\
+              \(          .'   '.         )/
+               '.(__(__.-'       '.__)__).'
+           </pre>
+                <h1>Nenhuma mensagem encontrada</h1>
+                <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+            <div id="div_com_mensagem" class="container__resposta">
+                <textarea id="texto_resposta" class="input__texto" disabled="true"></textarea>
+                <button class="button button__copiar" onclick="copiar()">Copiar</button>
+            </div>
+        </div>
+    </div>
+
+    <p class="info-text">! Apenas letras minúsculas e sem acento.</p>
+
+    <script src="app.js" defer></script>
+    <script src="colorControl.js" defer></script> <!-- Novo script para controle de cores -->
+</body>
+
+</html>
